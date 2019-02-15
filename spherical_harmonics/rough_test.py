@@ -6,7 +6,7 @@ from scipy.special import sph_harm
 
 from ylm import ylm
 
-y = ylm(2, 0)
+y = ylm(1, 0)
 # Set the aspect ratio to 1 so our sphere looks spherical
 fig = plt.figure(figsize=plt.figaspect(1.))
 ax = fig.add_subplot(111, projection='3d')

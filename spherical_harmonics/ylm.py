@@ -14,9 +14,9 @@ class ylm:
     unit_sphere : np.ndarray
         The cartesian coordinates for the unit sphere.
 
-    m : int
-
     l : int
+
+    m : int
 
     fcolors :  np.ndarray
 
@@ -30,9 +30,29 @@ class ylm:
 
         self.unit_sphere, self.phi, self.theta = make_unit_sphere_()
 
-        # Calculate the spherical harmonic Y(l,m) and normalize to [0,1]
+        # Calculate the spherical harmonic Y(l,m)
         self.fcolors = sph_harm(m, l, self.theta, self.phi)
+        print(self.fcolors.shape)
         print(type(self.fcolors))
+
+    # def set_fcolors(new_fcolors):
+    #     """
+    #     """
+    #     self.fcolors = new
+
+    # def __add__(self, ylm_2):
+    #     """
+    #     """
+    #     new_yml = ()
+    #     self.fcolors += ylm_2.fcolors
+    #     return
+
+    # def color_func_(self, x, y, z):
+    #     """
+    #     """
+    #     th = np.arccos(z / np.linalg.norm(x**2 + y**2 + z**2))
+    #     phi = np.arctan(y / x)
+    #     return sph_harm(self.m, self.l, th, phi)
 
     def plot(self, ax, part):
         """
